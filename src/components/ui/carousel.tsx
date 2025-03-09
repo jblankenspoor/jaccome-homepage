@@ -1,7 +1,14 @@
 /**
  * Carousel Component for Jacco's Portfolio
  * @description A carousel component for displaying content in a slideshow
- * @version 3.0.0
+ * @version 3.0.1
+ * @author Jacco
+ */
+
+/**
+ * Carousel Component for Jacco's Portfolio
+ * @description A carousel component for displaying content in a slideshow
+ * @version 3.0.1
  * @author Jacco
  */
 
@@ -16,9 +23,9 @@ import { Button } from "@/components/ui/button"
 
 /**
  * Carousel context for sharing state between carousel components
- * @type {React.Context<UseEmblaCarouselType[0] | undefined>}
+ * @type {React.Context<UseEmblaCarouselType[1] | null>}
  */
-type CarouselApi = UseEmblaCarouselType[0]
+type CarouselApi = NonNullable<UseEmblaCarouselType[1]>
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
 type CarouselOptions = UseCarouselParameters[0]
 type CarouselPlugin = UseCarouselParameters[1]
@@ -83,14 +90,14 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
-    const onSelect = React.useCallback((api: CarouselApi) => {
+    const onSelect = React.useCallback(() => {
       if (!api) {
         return
       }
 
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
-    }, [])
+    }, [api])
 
     const scrollPrev = React.useCallback(() => {
       api?.scrollPrev()
@@ -118,7 +125,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
         return
       }
 
-      onSelect(api)
+      onSelect()
       api.on("select", onSelect)
       api.on("reInit", onSelect)
 

@@ -1,7 +1,7 @@
 /**
  * Portfolio Component for Jacco's Homepage
  * @description The main portfolio component that displays personal information, projects, experience, and skills
- * @version 3.0.0
+ * @version 3.0.1
  * @author Jacco
  */
 
