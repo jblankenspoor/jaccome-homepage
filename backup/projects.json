@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "title": "Personal Blog",
+      "description": "A minimalist blog built with HTML, CSS, and vanilla JavaScript, focusing on clean typography and user experience.",
+      "imageUrl": "images/project1.jpg", 
+      "projectUrl": "https://example.com/blog"
+    },
+    {
+      "title": "Weather Dashboard",
+      "description": "An interactive weather application that pulls data from a public API and displays current conditions and forecasts.",
+      "imageUrl": "images/project2.jpg",
+      "projectUrl": "https://example.com/weather"
+    },
+    {
+      "title": "Task Manager",
+      "description": "A productivity tool that helps users organize their daily tasks with drag-and-drop functionality and localStorage persistence.",
+      "imageUrl": "images/project3.jpg",
+      "projectUrl": "https://example.com/tasks"
+    }
+  ]
+}

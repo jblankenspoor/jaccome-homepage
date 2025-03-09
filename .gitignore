@@ -31,3 +31,12 @@ logs
 # Build directories
 dist/
 build/
+
+# Next.js specific
+/.next/
+/out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel
