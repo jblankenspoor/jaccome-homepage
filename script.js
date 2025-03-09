@@ -1,7 +1,7 @@
 /**
  * Main script for Jacco's Portfolio
  * @description Handles loading and displaying project data on the portfolio page
- * @version 1.0.1
+ * @version 2.0.0
  * @author Jacco
  */
 
@@ -217,6 +217,6 @@ document.addEventListener('DOMContentLoaded', initPortfolio);
 document.addEventListener('DOMContentLoaded', () => {
     const versionElement = document.querySelector('.version');
     if (versionElement) {
-        versionElement.textContent = 'v1.0.1';
+        versionElement.textContent = 'v2.0.0';
     }
 });
