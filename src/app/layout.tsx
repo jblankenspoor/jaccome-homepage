@@ -1,7 +1,7 @@
 /**
  * Root Layout Component for Jacco's Homepage
  * @description The root layout component that wraps all pages
- * @version 3.0.1
+ * @version 3.0.2
  * @author Jacco
  */
 
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={inter.className}>
         {children}
         <PiwikProTracker />
-        <div className="fixed bottom-1 left-1 text-xs text-gray-400">v3.0.1</div>
+        <div className="fixed bottom-1 left-1 text-xs text-gray-400">v3.0.2</div>
       </body>
     </html>
   );
