@@ -1,13 +1,14 @@
 /**
  * Root Layout Component for Jacco's Homepage
  * @description The root layout component that wraps all pages
- * @version 3.0.0
+ * @version 3.0.1
  * @author Jacco
  */
 
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import dynamic from 'next/dynamic';
 
 /**
  * Inter font configuration
@@ -44,9 +45,19 @@ interface RootLayoutProps {
  * @returns {JSX.Element} - RootLayout component
  */
 export default function RootLayout({ children }: RootLayoutProps) {
+  // Dynamically import PiwikProTracker with no SSR to ensure it only runs on client
+  const PiwikProTracker = dynamic(
+    () => import('../components/PiwikProTracker'),
+    { ssr: false }
+  );
+  
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <PiwikProTracker />
+        <div className="fixed bottom-1 left-1 text-xs text-gray-400">v3.0.1</div>
+      </body>
     </html>
   );
 }
